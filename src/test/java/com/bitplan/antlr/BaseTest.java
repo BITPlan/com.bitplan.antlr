@@ -183,7 +183,7 @@ public abstract class BaseTest {
    * 
    * @param inputText
    * @throws Exception
-   * @returnt the LanguageParser
+   * @return the LanguageParser
    */
   public LanguageParser doTestParser(String inputText, int expectedErrors) throws Exception {
     return doTestParser(inputText, expectedErrors, MAX_TIMEOUT);
