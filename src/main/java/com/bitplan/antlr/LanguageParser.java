@@ -413,7 +413,7 @@ public abstract class LanguageParser {
    * 
    * @param text
    * @param end
-   * @return - the striped end
+   * @return - the stripped end
    */
   public static String stripEnd(String text, String end) {
     if (text.endsWith(end)) {
@@ -487,7 +487,7 @@ public abstract class LanguageParser {
   /**
    * get the Root Context for this parser
    * @param parser
-   * @return
+   * @return - the root context
    */
   protected abstract ParseTree getRootContext(Parser parser);
   
@@ -495,12 +495,15 @@ public abstract class LanguageParser {
    * parse the given input stream
    * @param in
    * @param inputText
-   * @return
+   * @return - the parse tree
    * @throws Exception
    */
   protected abstract ParseTree parse(CharStream in, String inputText)
       throws Exception;
  
+  /**
+   * show the parse tree
+   */
   public abstract void showParseTree();
   
   /**
