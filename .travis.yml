@@ -9,11 +9,11 @@ language:
 # let's first compile without tests
 install: 
   # get the Railroad Diagrams for ANTLR 4 grammar rules. 
-  - cd ..;git clone https://github.com/bkiers/rrd-antlr4
+  - pwd;cd ..;pwd;git clone https://github.com/bkiers/rrd-antlr4
   # make it locally available
-  - cd ../rrd-antlr4;mvn clean package
+  - pwd;cd rrd-antlr4;pwd;mvn clean package
   # then install the local com.bitplan.antlr 
-  - mvn install -DskipTests=true -Dgpg.skip=true
+  - pwd;cd ../com.bitplan.antlr;pwd;mvn install -DskipTests=true -Dgpg.skip=true
 
 # do the tests separately 
 script: 
