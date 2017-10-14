@@ -20,7 +20,7 @@
  */
 package com.bitplan.exp;
 
-import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Parser;
 import org.antlr.v4.runtime.tree.ParseTree;
 
@@ -50,7 +50,7 @@ public class ExpLanguageParser extends LanguageParser {
   }
 
   @Override
-  protected ParseTree parse(ANTLRInputStream in, String inputText)
+  protected ParseTree parse(CharStream in, String inputText)
       throws Exception {
     lexer = new ExpLexer(in);
     parser=new ExpParser(getTokens(lexer));

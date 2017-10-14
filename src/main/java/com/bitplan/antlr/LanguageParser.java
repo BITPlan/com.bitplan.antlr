@@ -40,10 +40,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
-import org.antlr.v4.runtime.ANTLRFileStream;
-import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.BailErrorStrategy;
 import org.antlr.v4.runtime.BaseErrorListener;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.DefaultErrorStrategy;
 import org.antlr.v4.runtime.Lexer;
@@ -76,7 +76,7 @@ public abstract class LanguageParser {
   String sourceFileName = "Text";
   private CommonTokenStream tokens;
 
-  static ANTLRInputStream in;
+  static CharStream in;
 
   protected enum ParserMode {LL_ONLY,TWO_STAGE,SLL_ONLY,LL_AMBIG_DETECTION}
   String inputText;
@@ -264,7 +264,7 @@ public abstract class LanguageParser {
    */
   public ParseTree parse(File inputFile, String encoding) throws Exception {
     this.setSourceFileName(inputFile.getPath());
-    in = new ANTLRFileStream(sourceFileName);
+    in = CharStreams.fromFileName(sourceFileName);
     inputText = FileUtils.readFileToString(inputFile, encoding);
     ParseTree result = parse(in, inputText);
     return result;
@@ -277,10 +277,10 @@ public abstract class LanguageParser {
    * @return
    * @throws IOException
    */
-  public static ANTLRInputStream streamForText(String text) throws IOException {
+  public static CharStream streamForText(String text) throws IOException {
     InputStream stream = new ByteArrayInputStream(
         text.getBytes(StandardCharsets.UTF_8));
-    in = new ANTLRInputStream(stream);
+    in = CharStreams.fromStream(stream);
     return in;
   }
 
@@ -498,7 +498,7 @@ public abstract class LanguageParser {
    * @return
    * @throws Exception
    */
-  protected abstract ParseTree parse(ANTLRInputStream in, String inputText)
+  protected abstract ParseTree parse(CharStream in, String inputText)
       throws Exception;
  
   public abstract void showParseTree();

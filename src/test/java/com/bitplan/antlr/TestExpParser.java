@@ -23,6 +23,7 @@ package com.bitplan.antlr;
 import static org.junit.Assert.assertEquals;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.junit.Test;
 
@@ -37,6 +38,11 @@ import com.bitplan.exp.ExpParser;
  *
  */
 public class TestExpParser extends BaseTest {
+  
+  @Override
+  public LanguageParser getParser() {
+    return new ExpLanguageParser();
+  }
 
   @Test
   public void testExpressionParser() throws Exception {
@@ -53,19 +59,13 @@ public class TestExpParser extends BaseTest {
   @Test
   public void testExpParser() throws Exception {
     String expression = "12*(5-6)";
-    ANTLRInputStream in = LanguageParser.streamForText(expression);
+    CharStream in = LanguageParser.streamForText(expression);
     ExpLexer lexer = new ExpLexer(in);
     CommonTokenStream tokens = new CommonTokenStream(lexer);
     ExpParser parser = new ExpParser(tokens);
     double result = parser.eval().value;
     // System.out.println(result);
     assertEquals(-12.0, result, 0.0001);
-  }
-
-  @Override
-  public LanguageParser getParser() {
-    // TODO Auto-generated method stub
-    return null;
   }
 
 }
