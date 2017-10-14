@@ -15,7 +15,7 @@ https://www.apache.org/licenses/LICENSE-2.0
 ### Distribution
 Available at Maven Central see 
 
-http://search.maven.org/#artifactdetails|com.bitplan.antlr|com.bitplan.antlr|0.0.1|jar
+http://search.maven.org/#artifactdetails|com.bitplan.antlr|com.bitplan.antlr|0.0.2|jar
 
 Maven dependency:
 
@@ -23,7 +23,7 @@ Maven dependency:
 <dependency>
   <groupId>com.bitplan.antlr</groupId>
   <artifactId>com.bitplan.antlr</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
 </dependency>
 ```
 
@@ -31,6 +31,8 @@ Maven dependency:
 [![BITPlan](http://wiki.bitplan.com/images/wiki/thumb/8/87/BITPlanLogo2012.svg/200px-BITPlanLogo2012.svg.png)](http://web.bitplan.com)
 
 ### Version History
-* 2017-10-14 0.0.1 - initial release
+* 2017-10-13 0.0.1 - initial release
+* 2017-10-14 0.0.2 - fixes #1 support for files from source directories
+                     and #2 support for timeout check
 
 
