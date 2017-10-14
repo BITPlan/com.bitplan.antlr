@@ -40,7 +40,10 @@ public class TestExpParser extends BaseTest {
 
   @Test
   public void testExpressionParser() throws Exception {
-    String expressions[] = { "2*3", "4+5", "(2+3)*(4+5)" };
+    String expressions[] = { "2*3", "4+5", "(2+3)*(4+5)",
+        // uncomment following line to test gui feature
+        // "(4+5)--(6-7)" 
+    };
     ExpLanguageParser exprParser = new ExpLanguageParser();
     for (String expression : expressions) {
       super.runParser(exprParser, expression, 0);
