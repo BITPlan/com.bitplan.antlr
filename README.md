@@ -7,7 +7,7 @@ Library with helpers for ANTLR Language development
 * issues: https://github.com/BITPlan/com.bitplan.antlr/issues
 
 ### Documentation
-* http://wikicms.bitplan.com/
+* http://wiki.bitplan.com/index.php/Antlr
 
 ### License
 https://www.apache.org/licenses/LICENSE-2.0
