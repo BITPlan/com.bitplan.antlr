@@ -22,7 +22,7 @@ package com.bitplan.antlr;
 
 import java.io.IOException;
 
-import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -73,7 +73,7 @@ public class TestIssue994 extends TestTwoPhaseParser {
     }
 
     @Override
-    protected Lexer getLexer(ANTLRInputStream in) {
+    protected Lexer getLexer(CharStream in) {
       return new ExprLexer(in);
     }
 
@@ -125,7 +125,7 @@ public class TestIssue994 extends TestTwoPhaseParser {
     }
 
     @Override
-    protected Lexer getLexer(ANTLRInputStream in) {
+    protected Lexer getLexer(CharStream in) {
       return new NumexprLexer(in);
     }
 
@@ -175,7 +175,7 @@ public class TestIssue994 extends TestTwoPhaseParser {
     }
 
     @Override
-    protected Lexer getLexer(ANTLRInputStream in) {
+    protected Lexer getLexer(CharStream in) {
       return new PrimrecexprLexer(in);
     }
 

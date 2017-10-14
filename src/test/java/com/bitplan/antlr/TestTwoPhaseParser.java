@@ -27,18 +27,19 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.BailErrorStrategy;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.ConsoleErrorListener;
 import org.antlr.v4.runtime.DefaultErrorStrategy;
 import org.antlr.v4.runtime.DiagnosticErrorListener;
 import org.antlr.v4.runtime.Lexer;
+import org.antlr.v4.runtime.Parser;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.atn.PredictionMode;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
-import org.antlr.v4.runtime.Parser;
 
 /**
  * 
@@ -56,7 +57,7 @@ public abstract class TestTwoPhaseParser {
    * hold a parser and some input;
    */
   public static abstract class ParserHolder {
-    ANTLRInputStream in;
+    CharStream in;
     CommonTokenStream tokens;
     Parser parser;
     private Lexer lexer;
@@ -98,7 +99,7 @@ public abstract class TestTwoPhaseParser {
 
     protected abstract Parser getParser(CommonTokenStream tokens);
 
-    protected abstract Lexer getLexer(ANTLRInputStream in);
+    protected abstract Lexer getLexer(CharStream in);
 
     protected abstract ParserRuleContext parse();
 
@@ -109,11 +110,11 @@ public abstract class TestTwoPhaseParser {
      * @return
      * @throws IOException
      */
-    public static ANTLRInputStream streamForText(String text)
+    public static CharStream streamForText(String text)
         throws IOException {
       InputStream stream = new ByteArrayInputStream(
           text.getBytes(StandardCharsets.UTF_8));
-      ANTLRInputStream in = new ANTLRInputStream(stream);
+      CharStream in = CharStreams.fromStream(stream);
       return in;
     }
   }
