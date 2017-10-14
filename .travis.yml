@@ -8,11 +8,11 @@ language:
 # be available in test phase
 # let's first compile without tests
 install: 
-  cd ..
-  git clone https://github.com/bkiers/rrd-antlr4
-  cd rrd-antlr4
-  mvn clean package
-  cd ../com.bitplan.antlr
+  cd ..;
+  git clone https://github.com/bkiers/rrd-antlr4;
+  cd rrd-antlr4;
+  mvn clean package;
+  cd ../com.bitplan.antlr;
   mvn install -DskipTests=true -Dgpg.skip=true
 
 # do the tests separately 
