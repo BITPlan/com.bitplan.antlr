@@ -22,7 +22,19 @@ package com.bitplan.antlr;
 
 import static org.hamcrest.number.OrderingComparison.lessThanOrEqualTo;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.apache.commons.io.FileUtils;
 import org.junit.Rule;
 import org.junit.rules.ErrorCollector;
 
@@ -35,37 +47,58 @@ import com.bitplan.antlr.LanguageParser;
  *
  */
 public abstract class BaseTest {
+  protected static final ExecutorService THREAD_POOL = Executors
+        .newCachedThreadPool();
+  protected static int MAX_TIMEOUT = 10000;
+  protected static <T> T timedCall(Callable<T> c, long timeout, TimeUnit timeUnit)
+      throws InterruptedException, ExecutionException, TimeoutException {
+        FutureTask<T> task = new FutureTask<T>(c);
+        THREAD_POOL.execute(task);
+        return task.get(timeout, timeUnit);
+      }
+
+  // http://stackoverflow.com/questions/10221891/continuing-test-execution-in-junit4-even-when-one-of-the-asserts-fails
   @Rule
   public ErrorCollector collector = new ErrorCollector();
 
   public abstract LanguageParser getParser();
 
-  LanguageParser parser;
-  boolean debug = true;
-  boolean gui = true;
-  boolean checkTree = true;
-  boolean checkgui = true;
-  
+  protected LanguageParser parser;
+  protected boolean debug = true;
+  protected boolean gui = true;
+  protected boolean checkTree = false; // if true in case of an error the parse tree will
+  // be printed
+  protected boolean checkgui = false; // if true in case of an error a interactive gui
+  // with
+  // the source code and parseTree will be shown
+
   /**
    * run parser with default options
-   * @param inputText - the input text
-   * @param expected - the number of expected errors
+   * 
+   * @param inputText
+   *          - the input text
+   * @param expected
+   *          - the number of expected errors
    * @return - the LanguageParser
    * @throws Exception
    */
-  public LanguageParser runParser(String inputText, int expected) throws Exception {
-    parser=this.getParser();
-    parser.debug=debug;
-    parser.gui=gui;
+  public LanguageParser runParser(String inputText, int expected)
+      throws Exception {
+    parser = this.getParser();
+    parser.debug = debug;
+    parser.gui = gui;
     return runParser(parser, inputText, expected);
   }
 
   /**
    * run the parser on the given input Text
    * 
-   * @param parser - the parser to run
-   * @param inputText - the input text
-   * @param expected - the number of expected errors
+   * @param parser
+   *          - the parser to run
+   * @param inputText
+   *          - the input text
+   * @param expected
+   *          - the number of expected errors
    * @return - the LanguageParser
    * @throws Exception
    */
@@ -105,5 +138,152 @@ public abstract class BaseTest {
           lessThanOrEqualTo(expected));
     return errorCount;
   }
+
+  /**
+   * check the given file
+   * 
+   * @param inputFile
+   * @param srcFileDirectory
+   * @return - the number of errors
+   * @throws Exception
+   * @return the parser
+   */
+  public LanguageParser doTestParser(File inputFile, SourceDirectory srcFileDirectory) throws Exception {
+    @SuppressWarnings("unchecked")
+    List<String> lines = FileUtils.readLines(inputFile,
+        srcFileDirectory.encoding);
+    srcFileDirectory.totalLines += lines.size();
+    srcFileDirectory.totalFiles++;
+  
+    String inputText = FileUtils.readFileToString(inputFile, "UTF-8");
+    if (debug) {
+      System.out.println(inputFile.getPath());
+      System.out.println(inputText);
+    }
+    LanguageParser result = this.doTestParser(inputText, -1);
+    result.setSourceFileName(inputFile.getPath());
+    if (result.errorCount > 0)
+      srcFileDirectory.errorFiles++;
+    srcFileDirectory.totalErrors += result.errorCount;
+    return result;
+  }
+
+  /**
+   * test the given input Text
+   * 
+   * @param inputText
+   * @throws Exception
+   */
+  public LanguageParser doTestParser(String inputText) throws Exception {
+    return doTestParser(inputText, 0);
+  }
+
+  /**
+   * test the given input Text
+   * 
+   * @param inputText
+   * @throws Exception
+   * @returnt the LanguageParser
+   */
+  public LanguageParser doTestParser(String inputText, int expectedErrors) throws Exception {
+    return doTestParser(inputText, expectedErrors, MAX_TIMEOUT);
+  }
+
+  /**
+   * test the given rule with the given timeout
+   * 
+   * @param inputText
+   * @param expectedErrors
+   * @param timeOutMSecs
+   * @throws Exception
+   * @return the parser
+   */
+  public LanguageParser doTestParser(final String inputText, final int expectedErrors, int timeOutMSecs)
+      throws Exception {
+        if (debug) {
+          System.out.println(inputText);
+        }
+        LanguageParser result = timedCall(new Callable<LanguageParser>() {
+          public LanguageParser call() throws Exception {
+            return runParser(inputText, expectedErrors);
+          }
+        }, timeOutMSecs, TimeUnit.MILLISECONDS);
+        return result;
+      }
+
+  /**
+   * test parse files in directories
+   * 
+   * @param rootDir
+   * @param sourceDirectories
+   * @param extensions
+   * @param ignorePrefixes
+   * @param limit
+   * @param progressStep
+   *          - how often to show the progress
+   * @return the list of failed LanguageParsers
+   * @throws Exception
+   */
+  public List<LanguageParser> testParseFilesInDirectories(File rootDir, List<SourceDirectory> sourceDirectories,
+      String[] extensions, String[] ignorePrefixes, int limit, int progressStep) throws Exception {
+        List<LanguageParser> result = new ArrayList<LanguageParser>();
+        int count = 0;
+      
+        SourceDirectory totalCount = new SourceDirectory(rootDir.getPath(), "/",
+            "total");
+        for (SourceDirectory srcFileDirectory : sourceDirectories) {
+          // get all files from the given Directory
+          String srcFileNames[] = srcFileDirectory.directory.list();
+          if (srcFileNames != null) {
+            for (String srcFileName : srcFileNames) {
+              File srcFile = new File(srcFileDirectory.directory, srcFileName);
+              if (!srcFile.isDirectory()) {
+      
+                boolean knownExtension = false;
+                for (String extension : extensions) {
+                  if (srcFile.getName().endsWith(extension)) {
+                    knownExtension = true;
+                  }
+                }
+                boolean doIgnore = !knownExtension;
+                for (String prefix : ignorePrefixes) {
+                  if (srcFile.getName().startsWith(prefix)) {
+                    doIgnore = true;
+                  }
+                }
+                if (!doIgnore) {
+                  count++;
+                  if (count > limit)
+                    break;
+                  if (count % progressStep == 1) {
+                    System.out.println(String.format("test %4d:", count)
+                        + srcFile.getPath());
+                  }
+                  try {
+                    LanguageParser parser = doTestParser(srcFile, srcFileDirectory);
+                    if (parser.errorCount > 0) {
+                      System.err.println(srcFile.getPath()+": "+parser.errorCount+" errors");
+                      result.add(parser);
+                    }
+                  } catch (TimeoutException toe) {
+                    System.err.println(srcFile.getPath()+": Timeout");
+                    srcFileDirectory.errorFiles++;
+                  }
+                }
+              }
+            }
+          }
+          collector.checkThat("Found Parser Errors in " + srcFileDirectory.title
+              + "(" + srcFileDirectory.info + ")", srcFileDirectory.totalErrors,
+              lessThanOrEqualTo(srcFileDirectory.expectedErrors));
+          srcFileDirectory.showResult();
+          totalCount.totalErrors += srcFileDirectory.totalErrors;
+          totalCount.errorFiles += srcFileDirectory.errorFiles;
+          totalCount.totalFiles += srcFileDirectory.totalFiles;
+          totalCount.totalLines += srcFileDirectory.totalLines;
+        }
+        totalCount.showResult();
+        return result;
+      }
 
 }
