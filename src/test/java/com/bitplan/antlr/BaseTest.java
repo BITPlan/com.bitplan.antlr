@@ -45,14 +45,28 @@ public abstract class BaseTest {
   boolean gui = true;
   boolean checkTree = true;
   boolean checkgui = true;
+  
+  /**
+   * run parser with default options
+   * @param inputText - the input text
+   * @param expected - the number of expected errors
+   * @return - the LanguageParser
+   * @throws Exception
+   */
+  public LanguageParser runParser(String inputText, int expected) throws Exception {
+    parser=this.getParser();
+    parser.debug=debug;
+    parser.gui=gui;
+    return runParser(parser, inputText, expected);
+  }
 
   /**
    * run the parser on the given input Text
    * 
-   * @param parser
-   * @param inputText
-   * @param expected
-   * @return
+   * @param parser - the parser to run
+   * @param inputText - the input text
+   * @param expected - the number of expected errors
+   * @return - the LanguageParser
    * @throws Exception
    */
   public LanguageParser runParser(LanguageParser parser, String inputText,
