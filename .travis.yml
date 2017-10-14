@@ -1,11 +1,20 @@
 # 
 # this is a java project using maven
-language: java
+language: 
+  java
 
 # switch off gpg handling
 # and split install and test phase of maven since xvfb will only
 # be available in test phase
 # let's first compile without tests
-install: mvn install -DskipTests=true -Dgpg.skip=true
+install: 
+  cd ..
+  git clone https://github.com/bkiers/rrd-antlr4
+  cd rrd-antlr4
+  mvn clean package
+  cd ../com.bitplan.antlr
+  mvn install -DskipTests=true -Dgpg.skip=true
+
 # do the tests separately 
-script: mvn test
+script: 
+  mvn test
