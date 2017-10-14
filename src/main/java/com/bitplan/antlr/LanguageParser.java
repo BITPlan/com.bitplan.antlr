@@ -271,10 +271,10 @@ public abstract class LanguageParser {
   }
   
   /**
-   * get the ANTLRInputStream for the given text
+   * get the CharStream for the given text
    * 
    * @param text
-   * @return
+   * @return the CharStream
    * @throws IOException
    */
   public static CharStream streamForText(String text) throws IOException {
@@ -288,7 +288,7 @@ public abstract class LanguageParser {
    * the the tree width of the given tree
    * 
    * @param tree
-   * @return
+   * @return the tree width
    */
   public static int treeWidth(ParseTree tree) {
     int width = tree.getChildCount();
@@ -390,7 +390,7 @@ public abstract class LanguageParser {
   /**
    * get the tree width
    * 
-   * @return
+   * @return - the tree width
    */
   public int treeWidth() {
     int result =treeWidth(this.rootContext);
@@ -413,7 +413,7 @@ public abstract class LanguageParser {
    * 
    * @param text
    * @param end
-   * @return
+   * @return - the striped end
    */
   public static String stripEnd(String text, String end) {
     if (text.endsWith(end)) {
