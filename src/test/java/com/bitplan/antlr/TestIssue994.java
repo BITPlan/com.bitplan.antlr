@@ -213,7 +213,7 @@ public class TestIssue994 extends TestTwoPhaseParser {
   @Test
   public void testIssue994NumExpr() throws Exception {
     // debug=true;
-    super.testDuration(new NumExprParserHolderFactory(), 30, 1.0, 3.0);
+    super.testDuration(new NumExprParserHolderFactory(), 30, 0.95, 3.0);
   }
 
   /**
