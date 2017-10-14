@@ -1,11 +1,22 @@
 /**
- * Copyright (C) 2016 BITPlan GmbH
  *
- * Pater-Delp-Str. 1
- * D-47877 Willich-Schiefbahn
+ * This file is part of the https://github.com/BITPlan/com.bitplan.antlr open source project
  *
- * http://www.bitplan.com
- * 
+ * Copyright © 2016-2017 BITPlan GmbH https://github.com/BITPlan
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ *
+ *  You may obtain a copy of the License at
+ *
+ *  http:www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.bitplan.antlr;
 
@@ -17,12 +28,12 @@ import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.junit.Test;
 
-import com.bitplan.expr.exprLexer;
-import com.bitplan.expr.exprParser;
-import com.bitplan.expr.numexprLexer;
-import com.bitplan.expr.numexprParser;
-import com.bitplan.expr.primrecexprLexer;
-import com.bitplan.expr.primrecexprParser;
+import com.bitplan.expr.ExprLexer;
+import com.bitplan.expr.ExprParser;
+import com.bitplan.expr.NumexprLexer;
+import com.bitplan.expr.NumexprParser;
+import com.bitplan.expr.PrimrecexprLexer;
+import com.bitplan.expr.PrimrecexprParser;
 
 
 /**
@@ -53,17 +64,17 @@ public class TestIssue994 extends TestTwoPhaseParser {
       super(index);
     }
 
-    private exprParser mParser;
+    private ExprParser mParser;
 
     @Override
     protected org.antlr.v4.runtime.Parser getParser(CommonTokenStream tokens) {
-      mParser = new exprParser(tokens);
+      mParser = new ExprParser(tokens);
       return mParser;
     }
 
     @Override
     protected Lexer getLexer(ANTLRInputStream in) {
-      return new exprLexer(in);
+      return new ExprLexer(in);
     }
 
     @Override
@@ -105,17 +116,17 @@ public class TestIssue994 extends TestTwoPhaseParser {
       super(index);
     }
 
-    private numexprParser mParser;
+    private NumexprParser mParser;
 
     @Override
     protected org.antlr.v4.runtime.Parser getParser(CommonTokenStream tokens) {
-      mParser = new numexprParser(tokens);
+      mParser = new NumexprParser(tokens);
       return mParser;
     }
 
     @Override
     protected Lexer getLexer(ANTLRInputStream in) {
-      return new numexprLexer(in);
+      return new NumexprLexer(in);
     }
 
     @Override
@@ -155,17 +166,17 @@ public class TestIssue994 extends TestTwoPhaseParser {
       super(index);
     }
 
-    private primrecexprParser mParser;
+    private PrimrecexprParser mParser;
 
     @Override
     protected org.antlr.v4.runtime.Parser getParser(CommonTokenStream tokens) {
-      mParser = new primrecexprParser(tokens);
+      mParser = new PrimrecexprParser(tokens);
       return mParser;
     }
 
     @Override
     protected Lexer getLexer(ANTLRInputStream in) {
-      return new primrecexprLexer(in);
+      return new PrimrecexprLexer(in);
     }
 
     @Override

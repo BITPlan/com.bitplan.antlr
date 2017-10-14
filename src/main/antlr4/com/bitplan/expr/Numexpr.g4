@@ -1,9 +1,10 @@
 /**
  * see https://github.com/antlr/antlr4/issues/994
+ 
  */
-grammar primrecexpr;
+grammar Numexpr;
 
-primrecexpr: if_statement EOF;
+numexpr: if_statement EOF;
 
 if_statement:
   if_part ( else_part ) ? 'endif';
@@ -21,25 +22,14 @@ statement_list:
   
 statement: if_statement; 
 
-
-expr:
-    notexpr
+expr: ID
+    | VALUE
+    | 'not' expr
+    | expr '=' expr
     | expr 'and' expr
     | expr 'or' expr
-    ;    
-
-notexpr: 
-    'not' notexpr
-    | equalexpr;
-
-equalexpr: 
-    atomexpr |   
-    equalexpr '=' equalexpr
+    | expr 'between' expr 'and' expr
     ;
-
-atomexpr:
-   ID
-    | VALUE;
 
 VALUE: [0-9]+;
 ID: [a-zA-Z_][a-zA-Z_0-9]*;

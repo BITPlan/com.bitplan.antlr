@@ -2,7 +2,7 @@
  * see https://github.com/antlr/antlr4/issues/994
  * 
  */
-grammar expr;
+grammar Expr;
 
 expr: ID
     | 'not' expr
