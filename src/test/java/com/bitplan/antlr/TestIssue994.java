@@ -195,6 +195,7 @@ public class TestIssue994 extends TestTwoPhaseParser {
     }
   }
 
+  static double MIN_RATIO=0.9;
   /**
    * see https://github.com/antlr/antlr4/issues/994
    * 
@@ -202,7 +203,7 @@ public class TestIssue994 extends TestTwoPhaseParser {
    */
   @Test
   public void testIssue994() throws Exception {
-    super.testDuration(new ExprParserHolderFactory(), 80, 0.95, 1.2);
+    super.testDuration(new ExprParserHolderFactory(), 80, MIN_RATIO, 1.2);
   }
 
   /**
@@ -213,7 +214,7 @@ public class TestIssue994 extends TestTwoPhaseParser {
   @Test
   public void testIssue994NumExpr() throws Exception {
     // debug=true;
-    super.testDuration(new NumExprParserHolderFactory(), 30, 0.95, 3.0);
+    super.testDuration(new NumExprParserHolderFactory(), 30, MIN_RATIO, 3.0);
   }
 
   /**
@@ -224,7 +225,7 @@ public class TestIssue994 extends TestTwoPhaseParser {
   @Test
   public void testIssue1232PrimRecursiveExpr() throws Exception {
     // debug = true;
-    super.testDuration(new PrimRecExprParserHolderFactory(), 50,0.95,1.2);
+    super.testDuration(new PrimRecExprParserHolderFactory(), 50,MIN_RATIO,1.2);
   }
 
 }
