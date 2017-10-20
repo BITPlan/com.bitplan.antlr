@@ -38,13 +38,14 @@
 		<github.global.server>github</github.global.server>
 		<!-- Dependency versions -->
 		<junit4.version>4.12</junit4.version>
+		<antlr.version>4.7</antlr.version>
 	</properties>
 	<dependencies>
 		<!-- antlr runtime -->
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr4-runtime</artifactId>
-			<version>4.7</version>
+			<version>${antlr.version}</version>
 		</dependency>
 		<!-- JUnit testing -->
 		<dependency>
