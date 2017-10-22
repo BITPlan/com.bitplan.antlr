@@ -48,7 +48,7 @@ options {
  * Parser rules
  */
 parse
-   : iri EOF
+   : iri NEWLINE* EOF
    ;
 
 /// IRI            = scheme ":" ihier-part [ "?" iquery ] [ "#" ifragment ]

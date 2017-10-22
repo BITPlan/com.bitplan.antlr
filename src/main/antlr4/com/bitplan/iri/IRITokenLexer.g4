@@ -52,3 +52,9 @@ NON_ZERO_DIGIT
    | D8
    | D9
    ;
+
+NEWLINE
+:
+ '\n'
+;
+   

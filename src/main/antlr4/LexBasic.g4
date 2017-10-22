@@ -11,7 +11,6 @@ UCSCHAR
    ;
 
 /// iprivate       = %xE000-F8FF / %xF0000-FFFFD / %x100000-10FFFD
-
 IPRIVATE
    : '\uE000' .. '\uF8FF'
    ;

@@ -1,0 +1,1 @@
+ldap://ldap.example.com/dc=example,dc=com??sub?(sn=Jensen)

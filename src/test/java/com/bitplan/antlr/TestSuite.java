@@ -26,7 +26,7 @@ import org.junit.runners.Suite;
 import com.bitplan.antlr.TestExpParser;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ TestExpParser.class, TestIssue994.class})
+@Suite.SuiteClasses({ TestExpParser.class, TestIssue994.class, TestIRIParser.class})
 /**
  * TestSuite
  * @author wf
