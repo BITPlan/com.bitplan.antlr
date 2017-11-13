@@ -53,7 +53,7 @@ import org.antlr.v4.runtime.Recognizer;
 import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.atn.PredictionMode;
 import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.tree.gui.TreeViewer;
+//import org.antlr.v4.runtime.tree.gui.TreeViewer;
 import org.apache.commons.io.FileUtils;
 
 import com.bitplan.swingutil.JToolTipEventTextArea;
@@ -299,86 +299,86 @@ public abstract class LanguageParser {
     return width;
   }
 
-  /**
-   * show the given Tree Viewer
-   * 
-   * @param tv
-   * @param title
-   * @param inputText
-   * @param scale
-   */
-  public int showTreeViewer(TreeViewer tv, String title, String inputText,
-      double scale) {
-        final JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        JToolTipEventTextArea textArea = new JToolTipEventTextArea(15, 80);
-        JTextArea errorArea = new JTextArea(5, 80);
-        JScrollPane scrollPane = new JScrollPane(textArea);
-        linePainter = new LinePainter(textArea);
-        for (Error error : this.getErrors()) {
-          linePainter.addErrorLine(error.getLine());
-          String errMsg = "line " + error.getLine() + " at col: "
-              + error.charPositionInLine + ":" + error.getMsg();
-          textArea.addToolTip(error.getLine(), errMsg);
-          errorArea.append(errMsg + "\n");
-        }
-        lineNumberer = new LineNumberer(scrollPane, textArea);
-        // set Text aftr lineNumberer is activated to show line numbers
-        textArea.setText(inputText);
-        panel.add(scrollPane);
-        JScrollPane errorScrollPane = new JScrollPane(errorArea);
-        errorlinePainter = new LinePainter(errorArea);
-        panel.add(errorScrollPane);
-        tv.setScale(scale);
-        ZoomPane tvZoomPane = new ZoomPane(tv, title + " " + this.errorCount
-            + " errors",
-            "to zoom use CMD +/- up/down left/right or the mouse wheel");
-        panel.add(tvZoomPane.getScrollPane());
-        panel.addHierarchyListener(new HierarchyListener() {
-          public void hierarchyChanged(HierarchyEvent e) {
-            Window window = SwingUtilities.getWindowAncestor(panel);
-            if (window instanceof Dialog) {
-              Dialog dialog = (Dialog) window;
-              if (!dialog.isResizable()) {
-                dialog.setResizable(true);
-              }
-            }
-          }
-        });
-        return JOptionPane.showConfirmDialog(null, panel, "ParseTree",
-            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-      }
+//  /**
+//   * show the given Tree Viewer
+//   * 
+//   * @param tv
+//   * @param title
+//   * @param inputText
+//   * @param scale
+//   */
+//  public int showTreeViewer(TreeViewer tv, String title, String inputText,
+//      double scale) {
+//        final JPanel panel = new JPanel();
+//        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+//        JToolTipEventTextArea textArea = new JToolTipEventTextArea(15, 80);
+//        JTextArea errorArea = new JTextArea(5, 80);
+//        JScrollPane scrollPane = new JScrollPane(textArea);
+//        linePainter = new LinePainter(textArea);
+//        for (Error error : this.getErrors()) {
+//          linePainter.addErrorLine(error.getLine());
+//          String errMsg = "line " + error.getLine() + " at col: "
+//              + error.charPositionInLine + ":" + error.getMsg();
+//          textArea.addToolTip(error.getLine(), errMsg);
+//          errorArea.append(errMsg + "\n");
+//        }
+//        lineNumberer = new LineNumberer(scrollPane, textArea);
+//        // set Text aftr lineNumberer is activated to show line numbers
+//        textArea.setText(inputText);
+//        panel.add(scrollPane);
+//        JScrollPane errorScrollPane = new JScrollPane(errorArea);
+//        errorlinePainter = new LinePainter(errorArea);
+//        panel.add(errorScrollPane);
+//        tv.setScale(scale);
+//        ZoomPane tvZoomPane = new ZoomPane(tv, title + " " + this.errorCount
+//            + " errors",
+//            "to zoom use CMD +/- up/down left/right or the mouse wheel");
+//        panel.add(tvZoomPane.getScrollPane());
+//        panel.addHierarchyListener(new HierarchyListener() {
+//          public void hierarchyChanged(HierarchyEvent e) {
+//            Window window = SwingUtilities.getWindowAncestor(panel);
+//            if (window instanceof Dialog) {
+//              Dialog dialog = (Dialog) window;
+//              if (!dialog.isResizable()) {
+//                dialog.setResizable(true);
+//              }
+//            }
+//          }
+//        });
+//        return JOptionPane.showConfirmDialog(null, panel, "ParseTree",
+//            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+//      }
+//
+//  /**
+//   * show the parseTree
+//   * 
+//   * @param parseTree
+//   * @param inputText
+//   * @param inputNames
+//   */
+//  public void showParseTree(ParseTree parseTree, String inputText, String[] ruleNames) {
+//    // http://stackoverflow.com/questions/30134121/drawing-parse-tree-in-antlr4-using-java/30137407#30137407
+//    List<String> ruleNamesList = Arrays.asList(ruleNames);
+//    // http://stackoverflow.com/questions/34832518/antlr4-dotgenerator-example
+//    TreeViewer tv = new TreeViewer(ruleNamesList, parseTree);
+//    double scale = 1;
+//    if (showTreeViewer(tv, sourceFileName, inputText, scale) == JOptionPane.CANCEL_OPTION) {
+//      System.exit(1);
+//    }
+//    /*
+//     * DotGenerator gen = new DotGenerator();
+//     * StringTemplate st = gen.toDOT((Tree) tree);
+//     * System.out.println(st);
+//     */
+//  }
 
-  /**
-   * show the parseTree
-   * 
-   * @param parseTree
-   * @param inputText
-   * @param inputNames
-   */
-  public void showParseTree(ParseTree parseTree, String inputText, String[] ruleNames) {
-    // http://stackoverflow.com/questions/30134121/drawing-parse-tree-in-antlr4-using-java/30137407#30137407
-    List<String> ruleNamesList = Arrays.asList(ruleNames);
-    // http://stackoverflow.com/questions/34832518/antlr4-dotgenerator-example
-    TreeViewer tv = new TreeViewer(ruleNamesList, parseTree);
-    double scale = 1;
-    if (showTreeViewer(tv, sourceFileName, inputText, scale) == JOptionPane.CANCEL_OPTION) {
-      System.exit(1);
-    }
-    /*
-     * DotGenerator gen = new DotGenerator();
-     * StringTemplate st = gen.toDOT((Tree) tree);
-     * System.out.println(st);
-     */
-  }
-
-  /**
-   * show the parse Tree
-   * @param parser 
-   */
-  public void showParseTree(Parser parser) {
-    showParseTree(rootContext, inputText, parser.getRuleNames());
-  }
+//  /**
+//   * show the parse Tree
+//   * @param parser 
+//   */
+//  public void showParseTree(Parser parser) {
+//    showParseTree(rootContext, inputText, parser.getRuleNames());
+//  }
 
   /**
    * print the Tree
