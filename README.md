@@ -38,3 +38,4 @@ Maven dependency:
                      and #2 support for timeout check
 * 2018-01-14 0.0.3 - make railroad-diagrammer dependency optional
 * 2018-01-14 0.0.4 - upgrades to ANTLR 4.7.1 
+* 2018-01-14 0.0.5 - include ANTLR tools 

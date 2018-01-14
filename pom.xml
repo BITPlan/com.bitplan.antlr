@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bitplan.antlr</groupId>
 	<artifactId>com.bitplan.antlr</artifactId>
-	<version>0.0.4</version>
+	<version>0.0.5</version>
 	<name>com.bitplan.antlr</name>
 	<description> Library with helpers for ANTLR Language development </description>
 	<url>https://github.com/BITPlan/com.bitplan.antlr</url>
@@ -41,10 +41,10 @@
 		<antlr.version>4.7.1</antlr.version>
 	</properties>
 	<dependencies>
-		<!-- antlr runtime -->
+		<!-- antlr runtime + tools -->
 		<dependency>
 			<groupId>org.antlr</groupId>
-			<artifactId>antlr4-runtime</artifactId>
+			<artifactId>antlr4</artifactId>
 			<version>${antlr.version}</version>
 		</dependency>
 		<!-- JUnit testing -->
