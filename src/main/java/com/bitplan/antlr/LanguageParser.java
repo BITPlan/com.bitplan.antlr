@@ -40,6 +40,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
+import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.BailErrorStrategy;
 import org.antlr.v4.runtime.BaseErrorListener;
 import org.antlr.v4.runtime.CharStream;
@@ -53,7 +54,7 @@ import org.antlr.v4.runtime.Recognizer;
 import org.antlr.v4.runtime.TokenStream;
 import org.antlr.v4.runtime.atn.PredictionMode;
 import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.tree.gui.TreeViewer;
+
 import org.apache.commons.io.FileUtils;
 
 import com.bitplan.swingutil.JToolTipEventTextArea;
