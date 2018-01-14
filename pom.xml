@@ -72,7 +72,7 @@
 		<dependency>
 			<groupId>nl.big-o</groupId>
 			<artifactId>rrd-antlr4</artifactId>
-			<version>0.2.0</version>
+			<version>0.1.2</version>
 			<optional>true</optional> <!-- make this non transitive  -->
 		</dependency>
 		<dependency>
