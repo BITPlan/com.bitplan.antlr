@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bitplan.antlr</groupId>
 	<artifactId>com.bitplan.antlr</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4</version>
 	<name>com.bitplan.antlr</name>
 	<description> Library with helpers for ANTLR Language development </description>
 	<url>https://github.com/BITPlan/com.bitplan.antlr</url>
@@ -38,7 +38,7 @@
 		<github.global.server>github</github.global.server>
 		<!-- Dependency versions -->
 		<junit4.version>4.12</junit4.version>
-		<antlr.version>4.7</antlr.version>
+		<antlr.version>4.7.1</antlr.version>
 	</properties>
 	<dependencies>
 		<!-- antlr runtime -->
@@ -135,7 +135,7 @@
 			<plugin>
 				<groupId>org.antlr</groupId>
 				<artifactId>antlr4-maven-plugin</artifactId>
-				<version>4.7</version>
+				<version>4.7.1</version>
 				<configuration>
 					<!-- basically this is the default setting -->
 					<sourceDirectory>src/main/antlr4</sourceDirectory>
@@ -228,7 +228,7 @@
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.5</version>
+				<version>1.6.8</version>
 				<extensions>true</extensions>
 				<configuration>
 					<serverId>ossrh</serverId>
