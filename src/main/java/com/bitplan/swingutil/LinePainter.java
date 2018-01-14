@@ -2,7 +2,7 @@
  *
  * This file is part of the https://github.com/BITPlan/com.bitplan.antlr open source project
  *
- * Copyright © 2016-2017 BITPlan GmbH https://github.com/BITPlan
+ * Copyright © 2016-2018 BITPlan GmbH https://github.com/BITPlan
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

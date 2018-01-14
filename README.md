@@ -2,6 +2,8 @@
 Library with helpers for ANTLR Language development
 
 [![Build Status](https://travis-ci.org/BITPlan/com.bitplan.antlr.svg?branch=master)](https://travis-ci.org/BITPlan/com.bitplan.antlr)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.bitplan.antlr/com.bitplan.antlr/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.bitplan.antlr/com.bitplan.antlr)
+
 ### github repository
 * repository: https://github.com/BITPlan/com.bitplan.antlr
 * issues: https://github.com/BITPlan/com.bitplan.antlr/issues
@@ -28,7 +30,7 @@ Maven dependency:
 ```
 
 ### Creator 
-[![BITPlan](http://wiki.bitplan.com/images/wiki/thumb/8/87/BITPlanLogo2012.svg/200px-BITPlanLogo2012.svg.png)](http://web.bitplan.com)
+[![BITPlan](http://wiki.bitplan.com/images/wiki/thumb/8/87/BITPlanLogo2012.svg/200px-BITPlanLogo2012.svg.png)](http://www.bitplan.com)
 
 ### Version History
 * 2017-10-13 0.0.1 - initial release
