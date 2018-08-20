@@ -5,8 +5,8 @@
 	<parent>
 		<groupId>com.bitplan.pom</groupId>
 		<artifactId>com.bitplan.pom</artifactId>
-		<version>0.0.4</version>
-		<!-- <relativePath>../com.bitplan.pom/pom.xml</relativePath> -->
+		<version>0.0.6</version>
+		<relativePath>../com.bitplan.pom/pom.xml</relativePath>
 	</parent>
 	<groupId>com.bitplan.antlr</groupId>
 	<artifactId>com.bitplan.antlr</artifactId>
@@ -117,27 +117,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>${maven-project-info-reports-plugin.version}</version>
-				<configuration>
-					<dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-					<dependencyLocationsEnabled>true</dependencyLocationsEnabled>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven-javadoc-plugin.version}</version>
-				<configuration>
-					<overview>${basedir}\src\main\java\overview.html</overview>
-					<verbose>true</verbose>
-					<additionalJOption>${javadoc.opts}</additionalJOption>
-				</configuration>
-			</plugin>
-		</plugins>
-	</reporting>
 </project>
