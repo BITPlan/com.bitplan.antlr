@@ -140,7 +140,9 @@ public class ZoomPane extends JPanel {
   /**
    * zoom the given component
    * 
-   * @param component
+   * @param component - the component to zoom
+   * @param title - the title of the zoom
+   * @param toolTip - the tooltip
    */
   public ZoomPane(JComponent component, String title, String toolTip) {
     super();

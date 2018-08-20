@@ -107,7 +107,7 @@ public abstract class TestTwoPhaseParser {
      * get the ANTLRInputStream for the given text
      * 
      * @param text
-     * @return
+     * @return the CharStream
      * @throws IOException
      */
     public static CharStream streamForText(String text)
@@ -161,12 +161,12 @@ public abstract class TestTwoPhaseParser {
   }
 
   /**
-   * tes the parser
+   * test the parser
    * 
    * @param parserHolder
    * @param mode
    * @param fallBackMode
-   * @return
+   * @return the ParserRuleContext
    * @throws IOException
    */
   protected ParserRuleContext doTestParser(ParserHolder parserHolder,

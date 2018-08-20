@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>com.bitplan.pom</groupId>
 		<artifactId>com.bitplan.pom</artifactId>
-		<version>0.0.1</version>
+		<version>0.0.2</version>
 		<relativePath>../com.bitplan.pom/pom.xml</relativePath>
 	</parent>
 	<groupId>com.bitplan.antlr</groupId>
 	<artifactId>com.bitplan.antlr</artifactId>
-	<version>0.0.6</version>
+	<version>0.0.7</version>
 	<name>com.bitplan.antlr</name>
 	<description> Library with helpers for ANTLR Language development </description>
 	<properties>
@@ -61,21 +61,11 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.6</version>
+				<version>${maven-jar-plugin.version}</version>
 				<executions>
 					<execution>
 						<goals>
@@ -95,19 +85,6 @@
 						<!-- JUnit4 TestSuites -->
 						<exclude>**/TestSuite.java</exclude>
 					</excludes>
-				</configuration>
-			</plugin>
-			<plugin>
-				<!-- http://code.mycila.com/license-maven-plugin/ -->
-				<groupId>com.mycila.maven-license-plugin</groupId>
-				<artifactId>maven-license-plugin</artifactId>
-				<version>1.9.0</version>
-				<configuration>
-					<header>src/etc/header.txt</header>
-					<strictCheck>true</strictCheck>
-					<includes>
-						<include>src/**/*.java</include>
-					</includes>
 				</configuration>
 			</plugin>
 			<!-- automate antlr grammar handling -->

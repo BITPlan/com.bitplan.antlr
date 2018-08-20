@@ -17,7 +17,7 @@ https://www.apache.org/licenses/LICENSE-2.0
 ### Distribution
 Available at Maven Central see 
 
-http://search.maven.org/#artifactdetails|com.bitplan.antlr|com.bitplan.antlr|0.0.4|jar
+http://search.maven.org/#artifactdetails|com.bitplan.antlr|com.bitplan.antlr|0.0.7|jar
 
 Maven dependency:
 
@@ -25,7 +25,7 @@ Maven dependency:
 <dependency>
   <groupId>com.bitplan.antlr</groupId>
   <artifactId>com.bitplan.antlr</artifactId>
-  <version>0.0.4</version>
+  <version>0.0.7</version>
 </dependency>
 ```
 
@@ -40,4 +40,5 @@ Maven dependency:
 * 2018-01-14 0.0.4 - upgrades to ANTLR 4.7.1 
 * 2018-01-14 0.0.5 - include ANTLR tools 
 * 2018-01-14 0.0.6 - use railroad diagrammer 0.2.0 (forked) 
+* 2018-08-20 0.0.7 - use com.bitplan.pom parent pom
 

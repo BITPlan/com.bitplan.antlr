@@ -233,8 +233,9 @@ public abstract class LanguageParser {
   /**
    * parse the given inputText
    * 
-   * @param inputText
+   * @param inputText - the inputText to parse
    * @throws IOException
+   * @return - the parseTree
    */
   public ParseTree parse(String inputText) throws Exception {
     this.inputText = inputText;
@@ -375,7 +376,7 @@ public abstract class LanguageParser {
 
   /**
    * show the parse Tree
-   * @param parser 
+   * @param parser - the parser
    */
   public void showParseTree(Parser parser) {
     showParseTree(rootContext, inputText, parser.getRuleNames());
@@ -510,7 +511,7 @@ public abstract class LanguageParser {
   /**
    * get the tokens
    * @param lexer
-   * @return
+   * @return the token stream
    */
   protected TokenStream getTokens(Lexer lexer) {
     tokens = new CommonTokenStream(lexer);
