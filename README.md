@@ -8,6 +8,9 @@ Library with helpers for ANTLR Language development
 * repository: https://github.com/BITPlan/com.bitplan.antlr
 * issues: https://github.com/BITPlan/com.bitplan.antlr/issues
 
+### Project
+* [Project pages](https://bitplan.github.io/com.bitplan.antlr/)
+
 ### Documentation
 * http://wiki.bitplan.com/index.php/Antlr
 
