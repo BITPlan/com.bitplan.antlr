@@ -1,3 +1,6 @@
+
 com.bitplan.antlr
 com.bitplan.exp
+com.bitplan.expr
+com.bitplan.iri
 com.bitplan.swingutil

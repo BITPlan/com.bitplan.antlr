@@ -20,19 +20,19 @@ under the License.
 <rss version="0.91">
   <channel>
     <title>com.bitplan.antlr - Checkstyle report</title>
-    <link>https://github.com/BITPlan/com.bitplan.antlr</link>
+    <link>https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr</link>
     <description>com.bitplan.antlr - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2017</copyright>
+    <copyright>&#169;2018 BITPlan GmbH</copyright>
     <item>
-      <title>File: 7,
-             Errors: 712,
+      <title>File: 29,
+             Errors: 15432,
              Warnings: 0,
              Infos: 0
       </title>
-            <link>https://github.com/BITPlan/com.bitplan.antlr/checkstyle.html</link>
+            <link>https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html</link>
       <description>
-        <p>Click <a href="https://github.com/BITPlan/com.bitplan.antlr/checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -46,7 +46,7 @@ under the License.
           <tbody>
                           <tr>
                 <td>
-                  <a href="https://github.com/BITPlan/com.bitplan.antlr/checkstyle.html#com.bitplan.swingutil.ZoomPane.java">com/bitplan/swingutil/ZoomPane.java</a>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.expr.ExprParser.java">com/bitplan/expr/ExprParser.java</a>
                 </td>
                 <td>
                   0
@@ -55,12 +55,12 @@ under the License.
                   0
                 </td>
                 <td>
-                  131
+                  432
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/BITPlan/com.bitplan.antlr/checkstyle.html#com.bitplan.swingutil.JToolTipEventTextArea.java">com/bitplan/swingutil/JToolTipEventTextArea.java</a>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.iri.IRIParserBaseListener.java">com/bitplan/iri/IRIParserBaseListener.java</a>
                 </td>
                 <td>
                   0
@@ -69,12 +69,12 @@ under the License.
                   0
                 </td>
                 <td>
-                  76
+                  649
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/BITPlan/com.bitplan.antlr/checkstyle.html#com.bitplan.swingutil.LinePainter.java">com/bitplan/swingutil/LinePainter.java</a>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.swingutil.ZoomPane.java">com/bitplan/swingutil/ZoomPane.java</a>
                 </td>
                 <td>
                   0
@@ -83,12 +83,12 @@ under the License.
                   0
                 </td>
                 <td>
-                  96
+                  129
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/BITPlan/com.bitplan.antlr/checkstyle.html#com.bitplan.antlr.LanguageParser.java">com/bitplan/antlr/LanguageParser.java</a>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.expr.NumexprParser.java">com/bitplan/expr/NumexprParser.java</a>
                 </td>
                 <td>
                   0
@@ -97,12 +97,12 @@ under the License.
                   0
                 </td>
                 <td>
-                  255
+                  1105
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/BITPlan/com.bitplan.antlr/checkstyle.html#com.bitplan.swingutil.LineNumberer.java">com/bitplan/swingutil/LineNumberer.java</a>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.expr.ExprBaseListener.java">com/bitplan/expr/ExprBaseListener.java</a>
                 </td>
                 <td>
                   0
@@ -111,12 +111,180 @@ under the License.
                   0
                 </td>
                 <td>
-                  84
+                  44
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/BITPlan/com.bitplan.antlr/checkstyle.html#com.bitplan.exp.ExpLanguageParser.java">com/bitplan/exp/ExpLanguageParser.java</a>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.expr.ExprLexer.java">com/bitplan/expr/ExprLexer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  193
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.expr.PrimrecexprBaseListener.java">com/bitplan/expr/PrimrecexprBaseListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  196
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.iri.IRITokenLexer.java">com/bitplan/iri/IRITokenLexer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  786
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#LexBasic.java">LexBasic.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  631
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.exp.ExpLexer.java">com/bitplan/exp/ExpLexer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  225
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.exp.ExpParser.java">com/bitplan/exp/ExpParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  684
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.expr.ExprListener.java">com/bitplan/expr/ExprListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  11
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.exp.ExpBaseListener.java">com/bitplan/exp/ExpBaseListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  90
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.antlr.SourceDirectory.java">com/bitplan/antlr/SourceDirectory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  43
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.expr.NumexprBaseListener.java">com/bitplan/expr/NumexprBaseListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  144
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.iri.IRIParserListener.java">com/bitplan/iri/IRIParserListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  423
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.expr.NumexprListener.java">com/bitplan/expr/NumexprListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  79
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.iri.IRILanguageParser.java">com/bitplan/iri/IRILanguageParser.java</a>
                 </td>
                 <td>
                   0
@@ -130,7 +298,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/BITPlan/com.bitplan.antlr/checkstyle.html#com.bitplan.antlr.SourceDirectory.java">com/bitplan/antlr/SourceDirectory.java</a>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.expr.PrimrecexprListener.java">com/bitplan/expr/PrimrecexprListener.java</a>
                 </td>
                 <td>
                   0
@@ -139,7 +307,147 @@ under the License.
                   0
                 </td>
                 <td>
-                  43
+                  112
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.antlr.LanguageParser.java">com/bitplan/antlr/LanguageParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  251
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.iri.IRIParser.java">com/bitplan/iri/IRIParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  6983
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.exp.ExpLanguageParser.java">com/bitplan/exp/ExpLanguageParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  27
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.swingutil.LinePainter.java">com/bitplan/swingutil/LinePainter.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  96
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.exp.ExpListener.java">com/bitplan/exp/ExpListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  41
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.expr.NumexprLexer.java">com/bitplan/expr/NumexprLexer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  246
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.expr.PrimrecexprLexer.java">com/bitplan/expr/PrimrecexprLexer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  232
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.expr.PrimrecexprParser.java">com/bitplan/expr/PrimrecexprParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1394
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.swingutil.JToolTipEventTextArea.java">com/bitplan/swingutil/JToolTipEventTextArea.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  75
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/BITPlan/com.bitplan.antlr/com.bitplan.antlr/checkstyle.html#com.bitplan.swingutil.LineNumberer.java">com/bitplan/swingutil/LineNumberer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  84
                 </td>
               </tr>
                       </tbody>
