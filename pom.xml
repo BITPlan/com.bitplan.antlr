@@ -5,8 +5,8 @@
 	<parent>
 		<groupId>com.bitplan.pom</groupId>
 		<artifactId>com.bitplan.pom</artifactId>
-		<version>0.0.2</version>
-		<relativePath>../com.bitplan.pom/pom.xml</relativePath>
+		<version>0.0.3</version>
+		<!-- <relativePath>../com.bitplan.pom/pom.xml</relativePath> -->
 	</parent>
 	<groupId>com.bitplan.antlr</groupId>
 	<artifactId>com.bitplan.antlr</artifactId>
