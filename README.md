@@ -8,8 +8,11 @@
 [![GitHub](https://img.shields.io/github/license/BITPlan/com.bitplan.antlr.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![BITPlan](http://wiki.bitplan.com/images/wiki/thumb/3/38/BITPlanLogoFontLessTransparent.png/198px-BITPlanLogoFontLessTransparent.png)](http://www.bitplan.com)
 
-### Project pages
-[com.bitplan.antlr](https://BITPlan.github.io/com.bitplan.antlr)
+### Documentation
+* [Wiki](http://www.bitplan.com/index.php/Antlr)
+* [com.bitplan.antlr Project pages](https://BITPlan.github.io/com.bitplan.antlr)
+* [Javadoc](https://BITPlan.github.io/com.bitplan.antlr/apidocs/index.html)
+* [Test-Report](https://BITPlan.github.io/com.bitplan.antlr/surefire-report.html)
 
 ### Maven dependency
 
