@@ -1,6 +1,6 @@
 ### com.bitplan.antlr
-[Library with helpers for ANTLR Language development]http://www.bitplan.com/index.php/Antlr 
-[project-pages](https://BITPlan.github.io/com.bitplan.antlr)
+* [Library with helpers for ANTLR Language development](http://www.bitplan.com/index.php/Antlr)
+* [project-pages](https://BITPlan.github.io/com.bitplan.antlr)
 
 ### Creator 
 [![BITPlan](http://wiki.bitplan.com/images/wiki/thumb/3/38/BITPlanLogoFontLessTransparent.png/198px-BITPlanLogoFontLessTransparent.png)](http://www.bitplan.com)
