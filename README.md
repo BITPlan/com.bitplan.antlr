@@ -1,21 +1,17 @@
-# com.bitplan.antlr
-| Github        | Maven         | Project pages  | 
-| ------------- | ------------: | ---------------| 
-| [com.bitplan.antlr](https://github.com/BITPlan/com.bitplan.antlr) | [0.0.7](https://search.maven.org/artifact/com.bitplan.antlr/com.bitplan.antlr/0.0.7/jar)      |   [Library with helpers for ANTLR Language development](https://BITPlan.github.io/com.bitplan.antlr) |
+### com.bitplan.antlr
+[Library with helpers for ANTLR Language development](http://www.bitplan.com/index.php/Antlr) 
 
-# Creator 
+[![Travis (.org)](https://img.shields.io/travis/BITPlan/com.bitplan.antlr.svg)](https://travis-ci.org/BITPlan/com.bitplan.antlr)
+[![Maven Central](https://img.shields.io/maven-central/v/com.bitplan.antlr/com.bitplan.antlr.svg)](https://search.maven.org/artifact/com.bitplan.antlr/com.bitplan.antlr/0.0.7/jar)
+[![GitHub issues](https://img.shields.io/github/issues/BITPlan/com.bitplan.antlr.svg)](https://github.com/BITPlan/com.bitplan.antlr/issues)
+[![GitHub issues](https://img.shields.io/github/issues-closed/BITPlan/com.bitplan.antlr.svg)](https://github.com/BITPlan/com.bitplan.antlr/issues/?q=is%3Aissue+is%3Aclosed)
+[![GitHub](https://img.shields.io/github/license/BITPlan/com.bitplan.antlr.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![BITPlan](http://wiki.bitplan.com/images/wiki/thumb/3/38/BITPlanLogoFontLessTransparent.png/198px-BITPlanLogoFontLessTransparent.png)](http://www.bitplan.com)
 
-[![Build Status](https://travis-ci.org/BITPlan/com.bitplan.antlr.svg?branch=master)](https://travis-ci.org/BITPlan/com.bitplan.antlr)
+### Project pages
+[com.bitplan.antlr](https://BITPlan.github.io/com.bitplan.antlr)
 
-### Documentation
-* http://wiki.bitplan.com/index.php/Antlr
-
-### License
-https://www.apache.org/licenses/LICENSE-2.0
-
-### Distribution
-[Available via maven repository](https://search.maven.org/artifact/com.bitplan.antlr/com.bitplan.antlr/0.0.7/jar)
+### Maven dependency
 
 Maven dependency
 ```xml
@@ -25,6 +21,9 @@ Maven dependency
   <version>0.0.7</version>
 </dependency>
 ```
+
+[Current release at repo1.maven.org](http://repo1.maven.org/maven2/com/bitplan/antlr/com.bitplan.antlr/0.0.7/)
+
 ### How to build
 ```
 git clone https://github.com/BITPlan/com.bitplan.antlr
