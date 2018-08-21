@@ -1,16 +1,18 @@
 ### com.bitplan.antlr
 [Library with helpers for ANTLR Language development]http://www.bitplan.com/index.php/Antlr 
-[project-pages](https://BITPlan.github.io/com.bitplan.antlr)
-
-### Creator 
-[![BITPlan](http://wiki.bitplan.com/images/wiki/thumb/3/38/BITPlanLogoFontLessTransparent.png/198px-BITPlanLogoFontLessTransparent.png)](http://www.bitplan.com)
 
 [![Travis (.org)](https://img.shields.io/travis/BITPlan/com.bitplan.antlr.svg)](https://travis-ci.org/BITPlan/com.bitplan.antlr)
 [![Maven Central](https://img.shields.io/maven-central/v/com.bitplan.antlr/com.bitplan.antlr.svg)](https://search.maven.org/artifact/com.bitplan.antlr/com.bitplan.antlr/0.0.7/jar)
 [![GitHub issues](https://img.shields.io/github/issues/BITPlan/com.bitplan.antlr.svg)](https://github.com/BITPlan/com.bitplan.antlr/issues)
+
 [![GitHub](https://img.shields.io/github/license/BITPlan/com.bitplan.antlr.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![BITPlan](http://wiki.bitplan.com/images/wiki/thumb/3/38/BITPlanLogoFontLessTransparent.png/198px-BITPlanLogoFontLessTransparent.png)](http://www.bitplan.com)
+
+### Project pages
+[project-pages](https://BITPlan.github.io/com.bitplan.antlr)
+
 ### Distribution
-[Available via maven repository](https://search.maven.org/artifact/com.bitplan.antlr/com.bitplan.antlr/0.0.7/jar)
+[repo1.maven.org](http://repo1.maven.org/maven2/com/bitplan/antlr/com.bitplan.antlr/0.0.7/)
 
 Maven dependency
 ```xml
