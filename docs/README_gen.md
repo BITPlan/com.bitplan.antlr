@@ -20,9 +20,10 @@ Maven dependency
   <artifactId>com.bitplan.antlr</artifactId>
   <version>0.0.7</version>
 </dependency>
+```
 
 [Current release t repo1.maven.org](http://repo1.maven.org/maven2/com/bitplan/antlr/com.bitplan.antlr/0.0.7/)
-```
+
 ### How to build
 ```
 git clone https://github.com/BITPlan/com.bitplan.antlr
