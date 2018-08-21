@@ -14,7 +14,9 @@
 	<name>com.bitplan.antlr</name>
 	<description> Library with helpers for ANTLR Language development </description>
 	<properties>
+		<!--  to make parent pom work -->
 		<github.project>com.bitplan.antlr</github.project>
+		<documentation.wiki>http://www.bitplan.com/index.php/Antlr</documentation.wiki>
 		<!-- Dependency versions -->
 		<junit4.version>4.12</junit4.version>
 		<antlr.version>4.7.1</antlr.version>
