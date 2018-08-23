@@ -13,7 +13,6 @@
 * [com.bitplan.antlr Project pages](https://BITPlan.github.io/com.bitplan.antlr)
 * [Javadoc](https://BITPlan.github.io/com.bitplan.antlr/apidocs/index.html)
 * [Test-Report](https://BITPlan.github.io/com.bitplan.antlr/surefire-report.html)
-
 ### Maven dependency
 
 Maven dependency
