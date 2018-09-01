@@ -119,99 +119,98 @@
 <a class="jxr_linenumber" name="L111" href="#L111">111</a>   }
 <a class="jxr_linenumber" name="L112" href="#L112">112</a>   
 <a class="jxr_linenumber" name="L113" href="#L113">113</a>   <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L114" href="#L114">114</a> <em class="jxr_javadoccomment">   * @param d</em>
-<a class="jxr_linenumber" name="L115" href="#L115">115</a> <em class="jxr_javadoccomment">   *          the zoom to set</em>
-<a class="jxr_linenumber" name="L116" href="#L116">116</a> <em class="jxr_javadoccomment">   */</em>
-<a class="jxr_linenumber" name="L117" href="#L117">117</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setZoomX(<a href="../../../com/bitplan/swingutil/ZoomPane.html">Zoom</a> zoom) {
-<a class="jxr_linenumber" name="L118" href="#L118">118</a>     <strong class="jxr_keyword">this</strong>.zoom = zoom;
-<a class="jxr_linenumber" name="L119" href="#L119">119</a>     updateZoom();
-<a class="jxr_linenumber" name="L120" href="#L120">120</a>   }
-<a class="jxr_linenumber" name="L121" href="#L121">121</a> 
-<a class="jxr_linenumber" name="L122" href="#L122">122</a>   <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L123" href="#L123">123</a> <em class="jxr_javadoccomment">   * add a Zoom Modifier</em>
-<a class="jxr_linenumber" name="L124" href="#L124">124</a> <em class="jxr_javadoccomment">   * @param vkKey</em>
-<a class="jxr_linenumber" name="L125" href="#L125">125</a> <em class="jxr_javadoccomment">   * @param action</em>
-<a class="jxr_linenumber" name="L126" href="#L126">126</a> <em class="jxr_javadoccomment">   * @param dx</em>
-<a class="jxr_linenumber" name="L127" href="#L127">127</a> <em class="jxr_javadoccomment">   * @param dy</em>
-<a class="jxr_linenumber" name="L128" href="#L128">128</a> <em class="jxr_javadoccomment">   */</em>
-<a class="jxr_linenumber" name="L129" href="#L129">129</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> addZoomModifier(<strong class="jxr_keyword">int</strong> vkKey, String action, <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> dx,<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> dy) {
-<a class="jxr_linenumber" name="L130" href="#L130">130</a>     im.put(KeyStroke.getKeyStroke(vkKey,InputEvent.META_DOWN_MASK), action);
-<a class="jxr_linenumber" name="L131" href="#L131">131</a>     am.put(action, <strong class="jxr_keyword">new</strong> AbstractAction() {
-<a class="jxr_linenumber" name="L132" href="#L132">132</a>       <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> serialVersionUID = 1L;
-<a class="jxr_linenumber" name="L133" href="#L133">133</a> 
-<a class="jxr_linenumber" name="L134" href="#L134">134</a>       @Override
-<a class="jxr_linenumber" name="L135" href="#L135">135</a>       <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> actionPerformed(ActionEvent e) {
-<a class="jxr_linenumber" name="L136" href="#L136">136</a>         changeZoom(dx,dy);
-<a class="jxr_linenumber" name="L137" href="#L137">137</a>       }
-<a class="jxr_linenumber" name="L138" href="#L138">138</a>     });
-<a class="jxr_linenumber" name="L139" href="#L139">139</a>   }
-<a class="jxr_linenumber" name="L140" href="#L140">140</a>   <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L141" href="#L141">141</a> <em class="jxr_javadoccomment">   * zoom the given component</em>
-<a class="jxr_linenumber" name="L142" href="#L142">142</a> <em class="jxr_javadoccomment">   * </em>
-<a class="jxr_linenumber" name="L143" href="#L143">143</a> <em class="jxr_javadoccomment">   * @param component - the component to zoom</em>
-<a class="jxr_linenumber" name="L144" href="#L144">144</a> <em class="jxr_javadoccomment">   * @param title - the title of the zoom</em>
-<a class="jxr_linenumber" name="L145" href="#L145">145</a> <em class="jxr_javadoccomment">   * @param toolTip - the tooltip</em>
-<a class="jxr_linenumber" name="L146" href="#L146">146</a> <em class="jxr_javadoccomment">   */</em>
-<a class="jxr_linenumber" name="L147" href="#L147">147</a>   <strong class="jxr_keyword">public</strong> <a href="../../../com/bitplan/swingutil/ZoomPane.html">ZoomPane</a>(JComponent component, String title, String toolTip) {
-<a class="jxr_linenumber" name="L148" href="#L148">148</a>     <strong class="jxr_keyword">super</strong>();
-<a class="jxr_linenumber" name="L149" href="#L149">149</a>     <strong class="jxr_keyword">this</strong>.title=title;
-<a class="jxr_linenumber" name="L150" href="#L150">150</a>     <strong class="jxr_keyword">this</strong>.toolTip=toolTip;
-<a class="jxr_linenumber" name="L151" href="#L151">151</a>     setBorder(BorderFactory.createTitledBorder(title));
-<a class="jxr_linenumber" name="L152" href="#L152">152</a>     setToolTipText(toolTip);
-<a class="jxr_linenumber" name="L153" href="#L153">153</a>     JPanel <strong class="jxr_keyword">inner</strong> = <strong class="jxr_keyword">new</strong> JPanel();
-<a class="jxr_linenumber" name="L154" href="#L154">154</a>     add(<strong class="jxr_keyword">inner</strong>);
-<a class="jxr_linenumber" name="L155" href="#L155">155</a>     <em class="jxr_comment">// setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));</em>
-<a class="jxr_linenumber" name="L156" href="#L156">156</a>     <strong class="jxr_keyword">this</strong>.add(component);
-<a class="jxr_linenumber" name="L157" href="#L157">157</a>     scrollPane=<strong class="jxr_keyword">new</strong> JScrollPane(<strong class="jxr_keyword">this</strong>);
-<a class="jxr_linenumber" name="L158" href="#L158">158</a>     scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-<a class="jxr_linenumber" name="L159" href="#L159">159</a>     scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-<a class="jxr_linenumber" name="L160" href="#L160">160</a>     scrollPane.setAutoscrolls(<strong class="jxr_keyword">true</strong>);
-<a class="jxr_linenumber" name="L161" href="#L161">161</a>     im = getInputMap(WHEN_IN_FOCUSED_WINDOW);
-<a class="jxr_linenumber" name="L162" href="#L162">162</a>     am = getActionMap();
-<a class="jxr_linenumber" name="L163" href="#L163">163</a>     addZoomModifier(KeyEvent.VK_PLUS, <span class="jxr_string">"plus"</span>,0.1d,0.1d);
-<a class="jxr_linenumber" name="L164" href="#L164">164</a>     addZoomModifier(KeyEvent.VK_MINUS,<span class="jxr_string">"minus"</span>,-0.1d,-0.1d);
-<a class="jxr_linenumber" name="L165" href="#L165">165</a>     addZoomModifier(KeyEvent.VK_UP,   <span class="jxr_string">"yplus"</span>,0,0.1d);
-<a class="jxr_linenumber" name="L166" href="#L166">166</a>     addZoomModifier(KeyEvent.VK_DOWN, <span class="jxr_string">"yminus"</span>,0,-0.1d);
-<a class="jxr_linenumber" name="L167" href="#L167">167</a>     addZoomModifier(KeyEvent.VK_RIGHT,<span class="jxr_string">"xplus"</span>,0.1d,0);
-<a class="jxr_linenumber" name="L168" href="#L168">168</a>     addZoomModifier(KeyEvent.VK_LEFT, <span class="jxr_string">"xminus"</span>,-0.1d,0);
-<a class="jxr_linenumber" name="L169" href="#L169">169</a>   
-<a class="jxr_linenumber" name="L170" href="#L170">170</a>     addMouseWheelListener(<strong class="jxr_keyword">new</strong> MouseWheelListener() {
-<a class="jxr_linenumber" name="L171" href="#L171">171</a>       @Override
-<a class="jxr_linenumber" name="L172" href="#L172">172</a>       <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> mouseWheelMoved(MouseWheelEvent e) {
-<a class="jxr_linenumber" name="L173" href="#L173">173</a>         <em class="jxr_comment">// Rectangle r=scrollPane.getViewport().getViewRect();</em>
-<a class="jxr_linenumber" name="L174" href="#L174">174</a>         <em class="jxr_comment">// r.translate(e.getX()/2,e.getY()/2);</em>
-<a class="jxr_linenumber" name="L175" href="#L175">175</a>         <strong class="jxr_keyword">double</strong> delta= e.getPreciseWheelRotation() / 10;
-<a class="jxr_linenumber" name="L176" href="#L176">176</a>         changeZoom(delta,delta);
-<a class="jxr_linenumber" name="L177" href="#L177">177</a>         <em class="jxr_comment">// System.out.println(r);</em>
-<a class="jxr_linenumber" name="L178" href="#L178">178</a> 
-<a class="jxr_linenumber" name="L179" href="#L179">179</a>         <em class="jxr_comment">// scrollPane.getViewport().scrollRectToVisible(r);</em>
-<a class="jxr_linenumber" name="L180" href="#L180">180</a>       }
-<a class="jxr_linenumber" name="L181" href="#L181">181</a> 
-<a class="jxr_linenumber" name="L182" href="#L182">182</a>     });
-<a class="jxr_linenumber" name="L183" href="#L183">183</a> 
-<a class="jxr_linenumber" name="L184" href="#L184">184</a>     setFocusable(<strong class="jxr_keyword">true</strong>);
-<a class="jxr_linenumber" name="L185" href="#L185">185</a>     requestFocusInWindow();
-<a class="jxr_linenumber" name="L186" href="#L186">186</a>   }
-<a class="jxr_linenumber" name="L187" href="#L187">187</a> 
-<a class="jxr_linenumber" name="L188" href="#L188">188</a>   @Override
-<a class="jxr_linenumber" name="L189" href="#L189">189</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> paintComponent(Graphics g) {
-<a class="jxr_linenumber" name="L190" href="#L190">190</a>     <strong class="jxr_keyword">super</strong>.paintComponent(g);
-<a class="jxr_linenumber" name="L191" href="#L191">191</a>     Graphics2D g2 = (Graphics2D) g;
-<a class="jxr_linenumber" name="L192" href="#L192">192</a>     g2.scale(zoom.zoomx, zoom.zoomy);
-<a class="jxr_linenumber" name="L193" href="#L193">193</a>   }
-<a class="jxr_linenumber" name="L194" href="#L194">194</a> 
-<a class="jxr_linenumber" name="L195" href="#L195">195</a>   <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L196" href="#L196">196</a> <em class="jxr_javadoccomment">   * get my preferred Size</em>
-<a class="jxr_linenumber" name="L197" href="#L197">197</a> <em class="jxr_javadoccomment">   * let the Layoutmanager doe the rest</em>
-<a class="jxr_linenumber" name="L198" href="#L198">198</a> <em class="jxr_javadoccomment">   */</em>
-<a class="jxr_linenumber" name="L199" href="#L199">199</a>   <strong class="jxr_keyword">public</strong> Dimension getPreferredSize() {
-<a class="jxr_linenumber" name="L200" href="#L200">200</a>     Dimension d = <strong class="jxr_keyword">super</strong>.getPreferredSize();
-<a class="jxr_linenumber" name="L201" href="#L201">201</a>     d.height = (<strong class="jxr_keyword">int</strong>) (d.height * zoom.zoomy);
-<a class="jxr_linenumber" name="L202" href="#L202">202</a>     d.width = (<strong class="jxr_keyword">int</strong>) (d.width * zoom.zoomx);
-<a class="jxr_linenumber" name="L203" href="#L203">203</a>     <strong class="jxr_keyword">return</strong> d;
-<a class="jxr_linenumber" name="L204" href="#L204">204</a>   }
-<a class="jxr_linenumber" name="L205" href="#L205">205</a>   
-<a class="jxr_linenumber" name="L206" href="#L206">206</a> }
+<a class="jxr_linenumber" name="L114" href="#L114">114</a> <em class="jxr_javadoccomment">   * @param zoom - the zoom to set</em>
+<a class="jxr_linenumber" name="L115" href="#L115">115</a> <em class="jxr_javadoccomment">   */</em>
+<a class="jxr_linenumber" name="L116" href="#L116">116</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> setZoomX(<a href="../../../com/bitplan/swingutil/ZoomPane.html">Zoom</a> zoom) {
+<a class="jxr_linenumber" name="L117" href="#L117">117</a>     <strong class="jxr_keyword">this</strong>.zoom = zoom;
+<a class="jxr_linenumber" name="L118" href="#L118">118</a>     updateZoom();
+<a class="jxr_linenumber" name="L119" href="#L119">119</a>   }
+<a class="jxr_linenumber" name="L120" href="#L120">120</a> 
+<a class="jxr_linenumber" name="L121" href="#L121">121</a>   <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L122" href="#L122">122</a> <em class="jxr_javadoccomment">   * add a Zoom Modifier</em>
+<a class="jxr_linenumber" name="L123" href="#L123">123</a> <em class="jxr_javadoccomment">   * @param vkKey</em>
+<a class="jxr_linenumber" name="L124" href="#L124">124</a> <em class="jxr_javadoccomment">   * @param action</em>
+<a class="jxr_linenumber" name="L125" href="#L125">125</a> <em class="jxr_javadoccomment">   * @param dx</em>
+<a class="jxr_linenumber" name="L126" href="#L126">126</a> <em class="jxr_javadoccomment">   * @param dy</em>
+<a class="jxr_linenumber" name="L127" href="#L127">127</a> <em class="jxr_javadoccomment">   */</em>
+<a class="jxr_linenumber" name="L128" href="#L128">128</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> addZoomModifier(<strong class="jxr_keyword">int</strong> vkKey, String action, <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> dx,<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">double</strong> dy) {
+<a class="jxr_linenumber" name="L129" href="#L129">129</a>     im.put(KeyStroke.getKeyStroke(vkKey,InputEvent.META_DOWN_MASK), action);
+<a class="jxr_linenumber" name="L130" href="#L130">130</a>     am.put(action, <strong class="jxr_keyword">new</strong> AbstractAction() {
+<a class="jxr_linenumber" name="L131" href="#L131">131</a>       <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">long</strong> serialVersionUID = 1L;
+<a class="jxr_linenumber" name="L132" href="#L132">132</a> 
+<a class="jxr_linenumber" name="L133" href="#L133">133</a>       @Override
+<a class="jxr_linenumber" name="L134" href="#L134">134</a>       <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> actionPerformed(ActionEvent e) {
+<a class="jxr_linenumber" name="L135" href="#L135">135</a>         changeZoom(dx,dy);
+<a class="jxr_linenumber" name="L136" href="#L136">136</a>       }
+<a class="jxr_linenumber" name="L137" href="#L137">137</a>     });
+<a class="jxr_linenumber" name="L138" href="#L138">138</a>   }
+<a class="jxr_linenumber" name="L139" href="#L139">139</a>   <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L140" href="#L140">140</a> <em class="jxr_javadoccomment">   * zoom the given component</em>
+<a class="jxr_linenumber" name="L141" href="#L141">141</a> <em class="jxr_javadoccomment">   * </em>
+<a class="jxr_linenumber" name="L142" href="#L142">142</a> <em class="jxr_javadoccomment">   * @param component - the component to zoom</em>
+<a class="jxr_linenumber" name="L143" href="#L143">143</a> <em class="jxr_javadoccomment">   * @param title - the title of the zoom</em>
+<a class="jxr_linenumber" name="L144" href="#L144">144</a> <em class="jxr_javadoccomment">   * @param toolTip - the tooltip</em>
+<a class="jxr_linenumber" name="L145" href="#L145">145</a> <em class="jxr_javadoccomment">   */</em>
+<a class="jxr_linenumber" name="L146" href="#L146">146</a>   <strong class="jxr_keyword">public</strong> <a href="../../../com/bitplan/swingutil/ZoomPane.html">ZoomPane</a>(JComponent component, String title, String toolTip) {
+<a class="jxr_linenumber" name="L147" href="#L147">147</a>     <strong class="jxr_keyword">super</strong>();
+<a class="jxr_linenumber" name="L148" href="#L148">148</a>     <strong class="jxr_keyword">this</strong>.title=title;
+<a class="jxr_linenumber" name="L149" href="#L149">149</a>     <strong class="jxr_keyword">this</strong>.toolTip=toolTip;
+<a class="jxr_linenumber" name="L150" href="#L150">150</a>     setBorder(BorderFactory.createTitledBorder(title));
+<a class="jxr_linenumber" name="L151" href="#L151">151</a>     setToolTipText(toolTip);
+<a class="jxr_linenumber" name="L152" href="#L152">152</a>     JPanel <strong class="jxr_keyword">inner</strong> = <strong class="jxr_keyword">new</strong> JPanel();
+<a class="jxr_linenumber" name="L153" href="#L153">153</a>     add(<strong class="jxr_keyword">inner</strong>);
+<a class="jxr_linenumber" name="L154" href="#L154">154</a>     <em class="jxr_comment">// setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));</em>
+<a class="jxr_linenumber" name="L155" href="#L155">155</a>     <strong class="jxr_keyword">this</strong>.add(component);
+<a class="jxr_linenumber" name="L156" href="#L156">156</a>     scrollPane=<strong class="jxr_keyword">new</strong> JScrollPane(<strong class="jxr_keyword">this</strong>);
+<a class="jxr_linenumber" name="L157" href="#L157">157</a>     scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+<a class="jxr_linenumber" name="L158" href="#L158">158</a>     scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+<a class="jxr_linenumber" name="L159" href="#L159">159</a>     scrollPane.setAutoscrolls(<strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L160" href="#L160">160</a>     im = getInputMap(WHEN_IN_FOCUSED_WINDOW);
+<a class="jxr_linenumber" name="L161" href="#L161">161</a>     am = getActionMap();
+<a class="jxr_linenumber" name="L162" href="#L162">162</a>     addZoomModifier(KeyEvent.VK_PLUS, <span class="jxr_string">"plus"</span>,0.1d,0.1d);
+<a class="jxr_linenumber" name="L163" href="#L163">163</a>     addZoomModifier(KeyEvent.VK_MINUS,<span class="jxr_string">"minus"</span>,-0.1d,-0.1d);
+<a class="jxr_linenumber" name="L164" href="#L164">164</a>     addZoomModifier(KeyEvent.VK_UP,   <span class="jxr_string">"yplus"</span>,0,0.1d);
+<a class="jxr_linenumber" name="L165" href="#L165">165</a>     addZoomModifier(KeyEvent.VK_DOWN, <span class="jxr_string">"yminus"</span>,0,-0.1d);
+<a class="jxr_linenumber" name="L166" href="#L166">166</a>     addZoomModifier(KeyEvent.VK_RIGHT,<span class="jxr_string">"xplus"</span>,0.1d,0);
+<a class="jxr_linenumber" name="L167" href="#L167">167</a>     addZoomModifier(KeyEvent.VK_LEFT, <span class="jxr_string">"xminus"</span>,-0.1d,0);
+<a class="jxr_linenumber" name="L168" href="#L168">168</a>   
+<a class="jxr_linenumber" name="L169" href="#L169">169</a>     addMouseWheelListener(<strong class="jxr_keyword">new</strong> MouseWheelListener() {
+<a class="jxr_linenumber" name="L170" href="#L170">170</a>       @Override
+<a class="jxr_linenumber" name="L171" href="#L171">171</a>       <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> mouseWheelMoved(MouseWheelEvent e) {
+<a class="jxr_linenumber" name="L172" href="#L172">172</a>         <em class="jxr_comment">// Rectangle r=scrollPane.getViewport().getViewRect();</em>
+<a class="jxr_linenumber" name="L173" href="#L173">173</a>         <em class="jxr_comment">// r.translate(e.getX()/2,e.getY()/2);</em>
+<a class="jxr_linenumber" name="L174" href="#L174">174</a>         <strong class="jxr_keyword">double</strong> delta= e.getPreciseWheelRotation() / 10;
+<a class="jxr_linenumber" name="L175" href="#L175">175</a>         changeZoom(delta,delta);
+<a class="jxr_linenumber" name="L176" href="#L176">176</a>         <em class="jxr_comment">// System.out.println(r);</em>
+<a class="jxr_linenumber" name="L177" href="#L177">177</a> 
+<a class="jxr_linenumber" name="L178" href="#L178">178</a>         <em class="jxr_comment">// scrollPane.getViewport().scrollRectToVisible(r);</em>
+<a class="jxr_linenumber" name="L179" href="#L179">179</a>       }
+<a class="jxr_linenumber" name="L180" href="#L180">180</a> 
+<a class="jxr_linenumber" name="L181" href="#L181">181</a>     });
+<a class="jxr_linenumber" name="L182" href="#L182">182</a> 
+<a class="jxr_linenumber" name="L183" href="#L183">183</a>     setFocusable(<strong class="jxr_keyword">true</strong>);
+<a class="jxr_linenumber" name="L184" href="#L184">184</a>     requestFocusInWindow();
+<a class="jxr_linenumber" name="L185" href="#L185">185</a>   }
+<a class="jxr_linenumber" name="L186" href="#L186">186</a> 
+<a class="jxr_linenumber" name="L187" href="#L187">187</a>   @Override
+<a class="jxr_linenumber" name="L188" href="#L188">188</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> paintComponent(Graphics g) {
+<a class="jxr_linenumber" name="L189" href="#L189">189</a>     <strong class="jxr_keyword">super</strong>.paintComponent(g);
+<a class="jxr_linenumber" name="L190" href="#L190">190</a>     Graphics2D g2 = (Graphics2D) g;
+<a class="jxr_linenumber" name="L191" href="#L191">191</a>     g2.scale(zoom.zoomx, zoom.zoomy);
+<a class="jxr_linenumber" name="L192" href="#L192">192</a>   }
+<a class="jxr_linenumber" name="L193" href="#L193">193</a> 
+<a class="jxr_linenumber" name="L194" href="#L194">194</a>   <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L195" href="#L195">195</a> <em class="jxr_javadoccomment">   * get my preferred Size</em>
+<a class="jxr_linenumber" name="L196" href="#L196">196</a> <em class="jxr_javadoccomment">   * let the Layoutmanager doe the rest</em>
+<a class="jxr_linenumber" name="L197" href="#L197">197</a> <em class="jxr_javadoccomment">   */</em>
+<a class="jxr_linenumber" name="L198" href="#L198">198</a>   <strong class="jxr_keyword">public</strong> Dimension getPreferredSize() {
+<a class="jxr_linenumber" name="L199" href="#L199">199</a>     Dimension d = <strong class="jxr_keyword">super</strong>.getPreferredSize();
+<a class="jxr_linenumber" name="L200" href="#L200">200</a>     d.height = (<strong class="jxr_keyword">int</strong>) (d.height * zoom.zoomy);
+<a class="jxr_linenumber" name="L201" href="#L201">201</a>     d.width = (<strong class="jxr_keyword">int</strong>) (d.width * zoom.zoomx);
+<a class="jxr_linenumber" name="L202" href="#L202">202</a>     <strong class="jxr_keyword">return</strong> d;
+<a class="jxr_linenumber" name="L203" href="#L203">203</a>   }
+<a class="jxr_linenumber" name="L204" href="#L204">204</a>   
+<a class="jxr_linenumber" name="L205" href="#L205">205</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2018 <a href="http://www.bitplan.com">BITPlan GmbH</a>. All rights reserved.</div>

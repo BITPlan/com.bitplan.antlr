@@ -148,7 +148,7 @@
 <a class="jxr_linenumber" name="L140" href="#L140">140</a>     <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L141" href="#L141">141</a> <em class="jxr_javadoccomment">     * get the errorLine;</em>
 <a class="jxr_linenumber" name="L142" href="#L142">142</a> <em class="jxr_javadoccomment">     * </em>
-<a class="jxr_linenumber" name="L143" href="#L143">143</a> <em class="jxr_javadoccomment">     * @return</em>
+<a class="jxr_linenumber" name="L143" href="#L143">143</a> <em class="jxr_javadoccomment">     * @return the error line</em>
 <a class="jxr_linenumber" name="L144" href="#L144">144</a> <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="L145" href="#L145">145</a>     <strong class="jxr_keyword">public</strong> String getErrorLine() {
 <a class="jxr_linenumber" name="L146" href="#L146">146</a>       <strong class="jxr_keyword">if</strong> (!sourceName.isEmpty()) {
@@ -362,9 +362,9 @@
 <a class="jxr_linenumber" name="L354" href="#L354">354</a>   <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L355" href="#L355">355</a> <em class="jxr_javadoccomment">   * show the parseTree</em>
 <a class="jxr_linenumber" name="L356" href="#L356">356</a> <em class="jxr_javadoccomment">   * </em>
-<a class="jxr_linenumber" name="L357" href="#L357">357</a> <em class="jxr_javadoccomment">   * @param parseTree</em>
-<a class="jxr_linenumber" name="L358" href="#L358">358</a> <em class="jxr_javadoccomment">   * @param inputText</em>
-<a class="jxr_linenumber" name="L359" href="#L359">359</a> <em class="jxr_javadoccomment">   * @param inputNames</em>
+<a class="jxr_linenumber" name="L357" href="#L357">357</a> <em class="jxr_javadoccomment">   * @param parseTree - the parse Tree to show</em>
+<a class="jxr_linenumber" name="L358" href="#L358">358</a> <em class="jxr_javadoccomment">   * @param inputText - the input Text</em>
+<a class="jxr_linenumber" name="L359" href="#L359">359</a> <em class="jxr_javadoccomment">   * @param ruleNames - the ruleNames to show</em>
 <a class="jxr_linenumber" name="L360" href="#L360">360</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L361" href="#L361">361</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> showParseTree(ParseTree parseTree, String inputText, String[] ruleNames) {
 <a class="jxr_linenumber" name="L362" href="#L362">362</a>     <em class="jxr_comment">// http://stackoverflow.com/questions/30134121/drawing-parse-tree-in-antlr4-using-java/30137407#30137407</em>
@@ -530,7 +530,7 @@
 <a class="jxr_linenumber" name="L522" href="#L522">522</a> <em class="jxr_javadoccomment">   * parse with the given Lexer and Parser</em>
 <a class="jxr_linenumber" name="L523" href="#L523">523</a> <em class="jxr_javadoccomment">   * @param lexer</em>
 <a class="jxr_linenumber" name="L524" href="#L524">524</a> <em class="jxr_javadoccomment">   * @param parser</em>
-<a class="jxr_linenumber" name="L525" href="#L525">525</a> <em class="jxr_javadoccomment">   * @return</em>
+<a class="jxr_linenumber" name="L525" href="#L525">525</a> <em class="jxr_javadoccomment">   * @return the ParseTree</em>
 <a class="jxr_linenumber" name="L526" href="#L526">526</a> <em class="jxr_javadoccomment">   */</em>
 <a class="jxr_linenumber" name="L527" href="#L527">527</a>   <strong class="jxr_keyword">public</strong> ParseTree parse(Lexer lexer, Parser parser) {
 <a class="jxr_linenumber" name="L528" href="#L528">528</a>     lexer.removeErrorListeners();
