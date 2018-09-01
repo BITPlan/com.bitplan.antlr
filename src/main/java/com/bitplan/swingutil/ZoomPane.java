@@ -111,8 +111,7 @@ public class ZoomPane extends JPanel {
   }
   
   /**
-   * @param d
-   *          the zoom to set
+   * @param zoom - the zoom to set
    */
   public void setZoomX(Zoom zoom) {
     this.zoom = zoom;

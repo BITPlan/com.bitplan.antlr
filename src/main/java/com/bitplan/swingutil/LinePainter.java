@@ -122,7 +122,7 @@ public class LinePainter implements Highlighter.HighlightPainter,
    *          - graphics
    * @param textC
    * @param color
-   * @returns - the highlighted rectangle
+   * @return - the highlighted rectangle
    */
   public Rectangle highLightPosition(int lineNumber, Graphics g,
       JTextComponent textC, Color color) {

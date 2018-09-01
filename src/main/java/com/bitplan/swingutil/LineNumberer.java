@@ -59,8 +59,8 @@ public class LineNumberer implements DocumentListener {
   
   /**
    * get the number/stringformat for the given number of lines
-   * @param maxLines
-   * @return
+   * @param maxLines - the maximum number of line
+   * @return the format
    */
   public String getFormat(int maxLines) {
     // calculate the width e.g. 1 for 8, 2 for 87, 3 for 257 ...
@@ -76,7 +76,7 @@ public class LineNumberer implements DocumentListener {
   /**
    * get the line number for the given line
    * @param line
-   * @return
+   * @return the format
    */
   public String lineNumber(String format,int line) {
     String lineNumber=String.format(format, line) + System.getProperty("line.separator");
@@ -85,7 +85,7 @@ public class LineNumberer implements DocumentListener {
   
   /**
    * get the text
-   * @return
+   * @return the text at the caret Position
    */
   public String getText(){
     int caretPosition = jta.getDocument().getLength();

@@ -53,7 +53,7 @@ public class SourceDirectory {
    * 
    * @param root
    *          - the root source Directory
-   * @return
+   * @return the list of source directories
    */
   public static List<SourceDirectory> getSourceDirectories(File root) {
     List<SourceDirectory> result = new ArrayList<SourceDirectory>();

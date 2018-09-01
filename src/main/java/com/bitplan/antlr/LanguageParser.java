@@ -140,7 +140,7 @@ public abstract class LanguageParser {
     /**
      * get the errorLine;
      * 
-     * @return
+     * @return the error line
      */
     public String getErrorLine() {
       if (!sourceName.isEmpty()) {
@@ -354,9 +354,9 @@ public abstract class LanguageParser {
   /**
    * show the parseTree
    * 
-   * @param parseTree
-   * @param inputText
-   * @param inputNames
+   * @param parseTree - the parse Tree to show
+   * @param inputText - the input Text
+   * @param ruleNames - the ruleNames to show
    */
   public void showParseTree(ParseTree parseTree, String inputText, String[] ruleNames) {
     // http://stackoverflow.com/questions/30134121/drawing-parse-tree-in-antlr4-using-java/30137407#30137407
@@ -522,7 +522,7 @@ public abstract class LanguageParser {
    * parse with the given Lexer and Parser
    * @param lexer
    * @param parser
-   * @return
+   * @return the ParseTree
    */
   public ParseTree parse(Lexer lexer, Parser parser) {
     lexer.removeErrorListeners();
