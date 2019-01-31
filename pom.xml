@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>com.bitplan.pom</groupId>
 		<artifactId>com.bitplan.pom</artifactId>
-		<version>0.0.15</version>
+		<version>0.0.22</version>
 		<relativePath>../com.bitplan.pom/pom.xml</relativePath>
 	</parent>
 	<groupId>com.bitplan.antlr</groupId>
 	<artifactId>com.bitplan.antlr</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8</version>
 	<name>com.bitplan.antlr</name>
 	<description> Library with helpers for ANTLR Language development </description>
 	<properties>

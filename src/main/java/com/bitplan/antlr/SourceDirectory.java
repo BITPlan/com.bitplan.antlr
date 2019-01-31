@@ -58,14 +58,15 @@ public class SourceDirectory {
   public static List<SourceDirectory> getSourceDirectories(File root) {
     List<SourceDirectory> result = new ArrayList<SourceDirectory>();
     String[] subFiles = root.list();
-    for (String subFileName : subFiles) {
-      File subFile = new File(root, subFileName);
-      if (subFile.isDirectory()) {
-        SourceDirectory sourceDirectory = new SourceDirectory(
-            subFile.getPath(), "UTF-8", subFileName);
-        result.add(sourceDirectory);
+    if (subFiles != null)
+      for (String subFileName : subFiles) {
+        File subFile = new File(root, subFileName);
+        if (subFile.isDirectory()) {
+          SourceDirectory sourceDirectory = new SourceDirectory(
+              subFile.getPath(), "UTF-8", subFileName);
+          result.add(sourceDirectory);
+        }
       }
-    }
     return result;
   }
 
@@ -90,12 +91,12 @@ public class SourceDirectory {
   public void showResult() {
     if (totalFiles > 0) {
       System.out.println("|" + this.title + ":" + this.path);
-      System.out.println(String.format(
-          "|%5d/%7d (%5.2f %%) error/total/%% files", errorFiles, totalFiles,
-          100.0 * errorFiles / totalFiles));
-      System.out.println(String.format(
-          "|%5d/%7d (%5.2f %%) error/total/%% lines", totalErrors, totalLines,
-          100.0 * totalErrors / totalLines));
+      System.out
+          .println(String.format("|%5d/%7d (%5.2f %%) error/total/%% files",
+              errorFiles, totalFiles, 100.0 * errorFiles / totalFiles));
+      System.out
+          .println(String.format("|%5d/%7d (%5.2f %%) error/total/%% lines",
+              totalErrors, totalLines, 100.0 * totalErrors / totalLines));
     }
   }
 
