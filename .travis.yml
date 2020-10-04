@@ -1,22 +1,25 @@
-# 
+#
 # this is a java project using maven
-language: 
+language:
   java
-
+#
+# Java 8
+#
+jdk: openjdk8
 # switch off gpg handling
 # and split install and test phase of maven since xvfb will only
 # be available in test phase
 # let's first compile without tests
-install: 
-  # get the Railroad Diagrams for ANTLR 4 grammar rules. 
+install:
+  # get the Railroad Diagrams for ANTLR 4 grammar rules.
   - pwd;cd ..;pwd;git clone https://github.com/bkiers/rrd-antlr4
   # use fork
-  #- pwd;cd ..;pwd;git clone https://github.com/BITPlan/rrd-antlr4 
+  #- pwd;cd ..;pwd;git clone https://github.com/BITPlan/rrd-antlr4
   # make it locally available
-  - pwd;cd rrd-antlr4;pwd;mvn clean install 
-  # then install the local com.bitplan.antlr 
+  - pwd;cd rrd-antlr4;pwd;mvn clean install
+  # then install the local com.bitplan.antlr
   - pwd;cd ../com.bitplan.antlr;pwd;mvn install -DskipTests=true -Dgpg.skip=true
 
-# do the tests separately 
-script: 
+# do the tests separately
+script:
   mvn test
